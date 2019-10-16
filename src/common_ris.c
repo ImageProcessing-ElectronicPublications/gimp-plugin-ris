@@ -19,8 +19,8 @@
 
 uint8_t ByteClamp(int c)
 {
-    uint8_t buff[3] = {0, (uint8_t)c, 255};
-    return buff[ (int)(c > 0) + (int)(c > 255) ];
+    uint8_t buff[3] = {(uint8_t)c, 255, 0};
+    return buff[ (int)(c < 0) + (int)((unsigned)c > 255) ];
 }
 
 ARGBpixel ARGBtoPixel(uint32_t targb)
