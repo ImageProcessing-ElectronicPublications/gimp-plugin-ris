@@ -12,9 +12,7 @@
 #include "filter_scalers.h"
 
 // Filter includes
-#include "hris.h"
-#include "gsample.h"
-#include "reduce.h"
+#include "../libris.h"
 
 static scaler_info scalers[SCALER_ENUM_LAST];
 

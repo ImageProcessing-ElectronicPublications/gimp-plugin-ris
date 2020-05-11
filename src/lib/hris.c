@@ -14,8 +14,7 @@
  *
  */
 
-#include "common_ris.h"
-#include "hris.h"
+#include "../libris.h"
 
 // Upscale by a factor of N from source (sp) to dest (dp)
 // Expects 32 bit alignment (RGBA 4BPP) for both source and dest pointers

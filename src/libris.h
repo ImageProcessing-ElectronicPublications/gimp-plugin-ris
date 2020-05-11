@@ -29,10 +29,13 @@
  * the author or the person who identified the work.
  */
 
-#ifndef __COMMON_RIS_H_
-#define __COMMON_RIS_H_
+#ifndef __LIBRIS_H_
+#define __LIBRIS_H_
 
+#include <stdlib.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <string.h>
 
 #define maskA  0xFF000000
 #define maskB  0x00FF0000
@@ -56,6 +59,13 @@
 #define TRIM(x,a,b) (MIN(MAX((x), (a)), (b)))
 #endif
 
+#define GSAMPLE_2X  2
+#define GSAMPLE_3X  3
+#define SCALE_HRIS_2X  2
+#define SCALE_HRIS_3X  3
+#define REDUCE_2X  2
+#define REDUCE_3X  3
+
 typedef struct
 {
     uint8_t c[4];
@@ -65,4 +75,13 @@ uint8_t ByteClamp(int c);
 ARGBpixel ARGBtoPixel(uint32_t targb);
 uint32_t PixeltoARGB(ARGBpixel tp);
 
-#endif //__COMMON_RIS_H_//
+void gsample_2x(uint32_t *src,  uint32_t *dest, int width, int height);
+void gsample_3x(uint32_t *src,  uint32_t *dest, int width, int height);
+
+void scaler_hris_2x(uint32_t *src,  uint32_t *dest, int width, int height);
+void scaler_hris_3x(uint32_t *src,  uint32_t *dest, int width, int height);
+
+void scaler_mean_2x(uint32_t *src,  uint32_t *dest, int width, int height);
+void scaler_mean_3x(uint32_t *src,  uint32_t *dest, int width, int height);
+
+#endif //__LIBRIS_H_//

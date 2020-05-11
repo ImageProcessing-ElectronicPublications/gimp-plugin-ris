@@ -24,13 +24,13 @@ libexecdir = $(gimpplugindir)/plug-ins
 libexec_PROGRAMS = gimp-plugin-ris
 
 plugin_pixel_art_scalers_SOURCES = \
-	common_ris.c \
-	filter_ris.c \
-	filter_dialog.c \
-	filter_scalers.c \
-	hris.c \
-	gsample.c \
-	reduce.c
+	lib/common_ris.c \
+	gtk2/filter_ris.c \
+	gtk2/filter_dialog.c \
+	gtk2/filter_scalers.c \
+	lib/hris.c \
+	lib/gsample.c \
+	lib/reduce.c
 
 INCLUDES = \
 	-I$(top_srcdir)	\

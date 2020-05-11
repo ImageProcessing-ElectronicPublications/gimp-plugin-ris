@@ -15,7 +15,7 @@
  *
  */
 
-#include "common_ris.h"
+#include "../libris.h"
 
 uint8_t ByteClamp(int c)
 {
