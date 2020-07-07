@@ -20,7 +20,6 @@
 // Expects 32 bit alignment (RGBA 4BPP) for both source and dest pointers
 void scaler_mean_x(uint32_t *sp, uint32_t *dp, int Xres, int Yres, int scale_factor)
 {
-    int bpp = BYTE_SIZE_RGBA_4BPP;
     int i, j, d, k, l, kj, li, m;
     int n = scale_factor * scale_factor;
     uint32_t wt;

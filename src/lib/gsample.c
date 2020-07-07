@@ -20,7 +20,6 @@
 // Expects 32 bit alignment (RGBA 4BPP) for both source and dest pointers
 void gsample(uint32_t *sp,  uint32_t *dp, int Xres, int Yres, int scale_factor)
 {
-    int bpp = BYTE_SIZE_RGBA_4BPP;
     int i, j, d, k, l, dx, dy, ix, iy, iz, ir, isz, stepl, deststep;
     int n = 9;
     int prevline, nextline;
@@ -30,8 +29,6 @@ void gsample(uint32_t *sp,  uint32_t *dp, int Xres, int Yres, int scale_factor)
     uint32_t *dest = (uint32_t *) dp;
 
     double imx, k0, kx, ky, kz, dd;
-    double deltay[BYTE_SIZE_RGBA_4BPP];
-    double deltax[BYTE_SIZE_RGBA_4BPP];
 
     deststep = Xres * scale_factor;
     ir = 2 * scale_factor;

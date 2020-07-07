@@ -75,12 +75,15 @@ uint8_t ByteClamp(int c);
 ARGBpixel ARGBtoPixel(uint32_t targb);
 uint32_t PixeltoARGB(ARGBpixel tp);
 
+void gsample(uint32_t *sp,  uint32_t *dp, int Xres, int Yres, int scale_factor);
 void gsample_2x(uint32_t *src,  uint32_t *dest, int width, int height);
 void gsample_3x(uint32_t *src,  uint32_t *dest, int width, int height);
 
+void scaler_hris(uint32_t *sp,  uint32_t *dp, int Xres, int Yres, int scale_mode);
 void scaler_hris_2x(uint32_t *src,  uint32_t *dest, int width, int height);
 void scaler_hris_3x(uint32_t *src,  uint32_t *dest, int width, int height);
 
+void scaler_mean_x(uint32_t *sp, uint32_t *dp, int Xres, int Yres, int scale_factor);
 void scaler_mean_2x(uint32_t *src,  uint32_t *dest, int width, int height);
 void scaler_mean_3x(uint32_t *src,  uint32_t *dest, int width, int height);
 
